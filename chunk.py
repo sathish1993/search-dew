@@ -1,10 +1,9 @@
 
+"""
+Splits text into chunks, roughly by tokens (words).
+This is a simple word-based chunker.
+"""
 def chunk_text(text, max_tokens=250, overlap_tokens=50):
-    """
-    Splits text into chunks, roughly by tokens (words).
-    This is a simple word-based chunker. For production, consider token-aware chunkers
-    from libraries like LangChain or NLTK for better precision with embedding models.
-    """
     words = text.split()
     chunks = []
     current_chunk_words = []

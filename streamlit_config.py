@@ -9,7 +9,7 @@ def setup_steamlit():
         layout="centered"
     )
 
-    st.title("🔍 Data Engineering Weekly Search")
+    st.title("🔍Data Engineering Weekly Search")
     st.markdown("Search through the indexed articles from Data Engineering Weekly using Turbopuffer.")
 
     query = st.text_input("Enter your search query here:", placeholder="e.g., data governance best practices")

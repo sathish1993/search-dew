@@ -9,15 +9,12 @@ import requests
 
 def extract_article_content(url):
     try:
-        response = requests.get(url, timeout=10)  # Add a timeout
+        response = requests.get(url, timeout=10)
         response.raise_for_status()
         soup = BeautifulSoup(response.text, 'html.parser')
 
         title = soup.find('h1').text if soup.find('h1') else 'No Title'
-        # You'll need to inspect the HTML of dataengineeringweekly.substack.com
-        # to find the specific tags/classes for article content.
-        # Common patterns: <div class="body">, <article>, <main>
-        article_body_tag = soup.find('div', class_='body')  # Example class name
+        article_body_tag = soup.find('div', class_='body')
         content_paragraphs = []
         if article_body_tag:
             for p in article_body_tag.find_all('p'):
@@ -41,7 +38,6 @@ def get_data(file_path, content_path):
             all_documents = []
             for item in data:
                 print("working on " + item['canonical_url'])
-                # Assuming 'url' field contains the link to the individual post
                 if 'canonical_url' in item:
                     article_data = extract_article_content(item['canonical_url'])
 

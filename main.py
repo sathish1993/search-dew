@@ -11,7 +11,7 @@ embedding_path = 'data/embedding_file.json'
 
 
 def search_query():
-    from tpuf import search_dew_turbopuffer
+
     user_query = "data goverance"
     search_results = search_dew_turbopuffer(user_query, num_results=3)
 
